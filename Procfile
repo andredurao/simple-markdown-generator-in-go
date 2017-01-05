@@ -1,1 +1,1 @@
-web: simple-markdown-generator-in-go
+web: go-getting-started

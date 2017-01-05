@@ -1,0 +1,15 @@
+{
+  "name": "Simple Markdown generator",
+  "description": "Markdown to HTML Example App",
+  "keywords": [
+    "markdown",
+    "html",
+    "go",
+    "sample",
+    "example"
+  ],
+  "image": "heroku/go:1.7",
+  "mount_dir": "src/github.com/andredurao/simple-markdown-generator-in-go",
+  "website": "https://github.com/andredurao/simple-markdown-generator-in-go",
+  "repository": "https://github.com/andredurao/simple-markdown-generator-in-go"
+}
