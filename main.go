@@ -26,11 +26,13 @@ func main() {
 	})
 
 	router.POST("/markdown", func(c *gin.Context) {
-		body := c.PostForm("body")
-		log.Println(body)
-		markdown := blackfriday.MarkdownCommon([]byte(c.PostForm("body")))
-		log.Println(markdown)
-		// TODO: render markdown content on return
+		body, ok := c.GetPostForm("body")
+		if !ok {
+			c.JSON(http.StatusBadRequest, "badrequest")
+			return
+		}
+		markdown := blackfriday.MarkdownCommon([]byte(body))
+		c.Data(http.StatusOK, "text/html; charset=utf-8", markdown)
 	})
 
 	router.Run(":" + port)
